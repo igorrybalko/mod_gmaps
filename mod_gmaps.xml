@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+    type="module"
+    version="3.1"
+    client="site">
+    <name>GMaps module</name>
+    <author>Igor Rybalko</author>
+    <creationDate>April 2016</creationDate>
+    <license>GNU General Public License</license>
+    <authorEmail>igorrybalko2009@yandex.ru</authorEmail>
+    <authorUrl>wolfweb.com.ua</authorUrl>
+    <version>1.0.0</version>
+    <description>Module GoogleMaps</description>
+    <files>
+        <filename module="mod_gmaps">mod_gmaps.php</filename>
+        <filename>mod_gmaps.xml</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="breadth"
+                    type="text" rows="3"
+                    label="MOD_GMAPS_BREADTH"
+                    description="MOD_GMAPS_NUMBERS" />
+                <field
+                    name="longitude"
+                    type="text" rows="3"
+                    label="MOD_GMAPS_LONGITUDE"
+                    description="MOD_GMAPS_NUMBERS" />
+                <field
+                    name="desk"
+                    type="text" rows="3"
+                    label="MOD_GMAPS_DESC"
+                    description="MOD_GMAPS_DETAL" />
+                <field
+                    name="zoom"
+                    type="text" rows="3"
+                    label="MOD_GMAPS_SCALE"
+                    description="MOD_GMAPS_INTEGER" />
+            </fieldset>
+            <fieldset name="advanced">
+				<field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+    
+    
+</extension>
