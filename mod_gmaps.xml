@@ -9,38 +9,68 @@
     <license>GNU General Public License</license>
     <authorEmail>igorrybalko2009@yandex.ru</authorEmail>
     <authorUrl>wolfweb.com.ua</authorUrl>
-    <version>1.0.0</version>
-    <description>Module GoogleMaps</description>
+    <version>1.1.0</version>
+    <description>Module Google Maps. Developed by http://wolfweb.com.ua</description>
+    
     <files>
         <filename module="mod_gmaps">mod_gmaps.php</filename>
         <filename>mod_gmaps.xml</filename>
         <filename>index.html</filename>
+        <filename>helper.php</filename>
         <folder>tmpl</folder>
         <folder>language</folder>
+        <folder>img</folder>
     </files>
     <config>
         <fields name="params">
             <fieldset name="basic">
                 <field
-                    name="breadth"
+                    name="breadth_cent"
                     type="text" rows="3"
-                    label="MOD_GMAPS_BREADTH"
+                    label="MOD_GMAPS_BREADTHCENTER"
                     description="MOD_GMAPS_NUMBERS" />
                 <field
-                    name="longitude"
+                    name="longitude_cent"
                     type="text" rows="3"
-                    label="MOD_GMAPS_LONGITUDE"
+                    label="MOD_GMAPS_LONGCENTER"
                     description="MOD_GMAPS_NUMBERS" />
-                <field
-                    name="desk"
-                    type="text" rows="3"
-                    label="MOD_GMAPS_DESC"
-                    description="MOD_GMAPS_DETAL" />
                 <field
                     name="zoom"
                     type="text" rows="3"
                     label="MOD_GMAPS_SCALE"
                     description="MOD_GMAPS_INTEGER" />
+                <field
+                    name="height"
+                    type="text" rows="3"
+                    label="MOD_GMAPS_HEIGHT"
+                    description="MOD_GMAPS_PIXELS" />
+                <field
+                    name="key"
+                    type="text" rows="3"
+                    label="API Key"
+                    description="Google Maps JavaScript API" />
+                <field name="items"
+                       type="repeatable"
+                       label="MOD_GMAPS_DATA" >
+                    <fieldset hidden="true" name="item_modal" repeat="true">
+                        <field
+                            name="breadth"
+                            type="text" rows="3"
+                            label="MOD_GMAPS_BREADTH"
+                            description="MOD_GMAPS_NUMBERS" />
+                        <field
+                            name="longitude"
+                            type="text" rows="3"
+                            label="MOD_GMAPS_LONGITUDE"
+                            description="MOD_GMAPS_NUMBERS" />
+                        <field
+                            name="desc"
+                            type="text" rows="3"
+                            label="MOD_GMAPS_DESC"
+                            description="MOD_GMAPS_DETAL" />
+                    </fieldset>
+                </field>
+
             </fieldset>
             <fieldset name="advanced">
 				<field
