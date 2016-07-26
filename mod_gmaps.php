@@ -60,7 +60,6 @@ if($info){
 }
 ?>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key; ?>&callback=initialize&language=<?php echo $lang; ?>"></script>
 <script>
 
     function initialize() {
@@ -106,5 +105,6 @@ if($info){
     }
 
 </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key; ?>&callback=initialize&language=<?php echo $lang; ?>"></script>
 <?php
 require JModuleHelper::getLayoutPath('mod_gmaps', $params->get('layout', 'default'));
