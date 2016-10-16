@@ -10,13 +10,14 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-function convert($items)
-{
-    $converted = array();
-    foreach ($items as $key => $item) {
-        foreach ($item as $partkey => $value) {
-            $converted[$partkey][$key] = $value;
-        }
-    }
-    return $converted;
+class gMapsModHelper {
+	public static function convert($items){
+	    $converted = array();
+	    foreach ($items as $key => $item) {
+	        foreach ($item as $partkey => $value) {
+	            $converted[$partkey][$key] = $value;
+	        }
+	    }
+	    return $converted;
+	}
 }

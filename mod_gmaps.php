@@ -24,7 +24,10 @@ $key = htmlspecialchars(trim($params->get('key')));
 $language = JFactory::getLanguage();
 $lang = substr($language->getTag(), 0, 2);
 
-$module_info = JModuleHelper::getModule('mod_gmaps');
+$scriptSource = "https://maps.googleapis.com/maps/api/js?key=" . $key . "&language=" . $lang; 
+
+$doc = JFactory::getDocument();
+$doc->addScript($scriptSource);
 
 $correct = rand(1,1000);
 $icon = '/modules/mod_gmaps/img/marker.png';
@@ -47,7 +50,7 @@ if( !is_numeric($longitudeCent)){
 }
 
 if($info){
-    $items = convert($info);
+    $items = gMapsModHelper::convert($info);
     if(count($items) == 1){
         $breadthCent = $items[0]['breadth'];
         $longitudeCent = $items[0]['longitude'];
@@ -62,7 +65,7 @@ if($info){
 
 <script>
 
-    function initialize() {
+    function initializegmap<?php echo $correct;?>() {
         var ukCent = new google.maps.LatLng(<?php echo $breadthCent . ', ' . $longitudeCent;?>);
         var mapOptions = {
             zoom: <?php echo intval($zoom); ?>,
@@ -103,8 +106,8 @@ if($info){
         <?php } ?>
 
     }
+    google.maps.event.addDomListener(window, 'load', initializegmap<?php echo $correct;?>);
 
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $key; ?>&callback=initialize&language=<?php echo $lang; ?>"></script>
 <?php
 require JModuleHelper::getLayoutPath('mod_gmaps', $params->get('layout', 'default'));
