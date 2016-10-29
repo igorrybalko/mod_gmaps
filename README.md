@@ -1,7 +1,7 @@
 # mod_gmaps
 Joomla module Google maps
 <p>Модуль Google maps для Joomla 3.2+</p>
-Для работы модуля необходимо укзать **Google Maps JavaScript API key**
+Для работы модуля необходимо указать **Google Maps JavaScript API key**
 ###Демо
 для просмотра http://demo.wolfweb.com.ua/
 ####Подробнее о модуле 
