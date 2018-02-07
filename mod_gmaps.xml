@@ -9,7 +9,7 @@
     <license>GNU General Public License</license>
     <authorEmail>igorrybalko2009@yandex.ru</authorEmail>
     <authorUrl>wolfweb.com.ua</authorUrl>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <description>Module Google Maps. Developed by http://wolfweb.com.ua</description>
     
     <files>
@@ -86,6 +86,9 @@
             </fieldset>
         </fields>
     </config>
-    
+    <updateservers>
+        <server type="collection">http://example.com/list.xml</server>
+        <server type="extension" priority="2" name="My Extension's Updates">http://example.com/extension.xml</server>
+    </updateservers>
     
 </extension>
