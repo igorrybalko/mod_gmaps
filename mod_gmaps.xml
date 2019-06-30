@@ -5,11 +5,11 @@
     client="site">
     <name>GMaps module</name>
     <author>Igor Rybalko</author>
-    <creationDate>April 2016</creationDate>
+    <creationDate>June 2019</creationDate>
     <license>GNU General Public License</license>
     <authorEmail>igorrybalko2009@gmail.com</authorEmail>
     <authorUrl>greencomet.net</authorUrl>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <description>Module Google Maps. Developed by https://greencomet.net</description>
     
     <files>
