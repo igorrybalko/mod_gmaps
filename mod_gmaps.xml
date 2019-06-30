@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension
     type="module"
-    version="3.1"
+    version="3"
     client="site">
     <name>GMaps module</name>
     <author>Igor Rybalko</author>
@@ -9,7 +9,7 @@
     <license>GNU General Public License</license>
     <authorEmail>igorrybalko2009@gmail.com</authorEmail>
     <authorUrl>greencomet.net</authorUrl>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <description>Module Google Maps. Developed by https://greencomet.net</description>
     
     <files>
@@ -87,7 +87,7 @@
         </fields>
     </config>
     <updateservers>
-        <server type="extension" priority="1" name="GMaps module">http://example.com/extension.xml</server>
+        <server type="extension" priority="1" name="GMaps module">https://raw.githubusercontent.com/igorrybalko/mod_gmaps/master/update.xml</server>
     </updateservers>
     
 </extension>
