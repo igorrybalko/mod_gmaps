@@ -2,8 +2,8 @@
 /**
  * @package mod_gmaps
  * @author Rybalko Igor
- * @version 1.1
- * @copyright (C) 2016 http://wolfweb.com.ua
+ * @version 1.2.0
+ * @copyright (C) 2019 https://greencomet.net
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
 */

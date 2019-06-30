@@ -2,8 +2,8 @@
 /**
  * @package mod_gmaps
  * @author Rybalko Igor
- * @version 1.1
- * @copyright (C) 2016 http://wolfweb.com.ua
+ * @version 1.2.0
+ * @copyright (C) 2019 https://greencomet.net
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
 */
@@ -81,9 +81,9 @@ if($info){
 
         var markerType = new google.maps.MarkerImage(
             '<?php echo $icon?>',
-            new google.maps.Size(22,40),
+            new google.maps.Size(24,36),
             new google.maps.Point(0,0),
-            new google.maps.Point(11,40)
+            new google.maps.Point(12,36)
         );
 
         var myLatlng<?php echo $i; ?> = new google.maps.LatLng(<?php echo $item['breadth']. " , " . $item['longitude']; ?>);
