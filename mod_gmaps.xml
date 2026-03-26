@@ -20,6 +20,7 @@
         <folder>media</folder>
     </files>
     <media destination="mod_gmaps" folder="media">
+        <filename>joomla.asset.json</filename>
         <folder>js</folder>
     </media>
     <config>

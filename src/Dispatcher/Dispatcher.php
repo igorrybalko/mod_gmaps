@@ -20,7 +20,7 @@ use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
 
-use Joomla\CMS\Uri\Uri;
+//use Joomla\CMS\Uri\Uri;
 
 use Webstep\Module\Gmaps\Site\Helper\GmapsHelper;
 
@@ -41,49 +41,33 @@ class Dispatcher implements DispatcherInterface
 
         $language = Factory::getApplication()->getLanguage();
         $language->load('mod_gmaps', JPATH_BASE . '/modules/mod_gmaps');
-
-        $params = new Registry($this->module->params);
-        $i = 0;	
-        $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
-        $latCent = htmlspecialchars(trim($params->get('lat_cent', null)));
-        $lngCent = htmlspecialchars(trim($params->get('lng_cent', null)));
-        $zoom = htmlspecialchars(trim($params->get('zoom')));
-        $height = (int) htmlspecialchars(trim($params->get('height')));
-        $info = $params->get('items', []);
-        $key = htmlspecialchars(trim($params->get('key')));
-
         $lang = $language->getTag();
 
-        $scriptSource = "https://maps.googleapis.com/maps/api/js?key=" . $key . "&language=" . $lang; 
+        $params = new Registry($this->module->params);
 
+        $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx') ?? '');
+        $latCent = htmlspecialchars(trim($params->get('lat_cent') ?? ''));
+        $lngCent = htmlspecialchars(trim($params->get('lng_cent') ?? ''));
+        $zoom = htmlspecialchars(trim($params->get('zoom') ?? ''));
+        $height = (int) htmlspecialchars(trim($params->get('height') ?? ''));
+        $info = $params->get('items', []);
+        $key = htmlspecialchars(trim($params->get('key') ?? ''));
 
         $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 
-        $wa->registerAndUseScript(
-            'googlemaps.api',                
-            $scriptSource,                       
-            [
-                'version'  => 'auto',
-                'defer'    => true,
-                'attributes' => ['async' => false]
-            ]
-        );
+        $scriptSource = "https://maps.googleapis.com/maps/api/js?key=" . $key . "&language=" . $lang;
+        $wa->registerAndUseScript('googlemaps.api', $scriptSource, [], ['defer' => true], []);
 
-        // $wa->registerAndUseScript(
-        //     'mod_gmaps.gmaps',                  
-        //     'mod_gmaps/media/js/gmaps.js',               // ← именно так!
-        //     ['version' => 'auto'],              
-        //     [],                                 
-        //     ['googlemaps.api']                  // зависимости — Google Maps должен загрузиться раньше
+        $wr = $wa->getRegistry();
+        $wr->addRegistryFile('media/mod_gmaps/joomla.asset.json');
+        $wa->useScript('mod_gmaps.gmaps');
+
+        // $document = Factory::getDocument();
+        // $document->addScript(
+        //     Uri::root(true) . '/modules/mod_gmaps/media/js/gmaps.js',
+        //     ['defer' => true],
+        //     ['relative' => false]
         // );
-
-        $document = Factory::getDocument();
-
-        $document->addScript(
-            Uri::root(true) . '/modules/mod_gmaps/media/js/gmaps.js',
-            ['defer' => true],
-            ['relative' => false]
-        );
 
         if(!$height){
             $height = 300;
