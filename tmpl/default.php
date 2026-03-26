@@ -1,21 +1,18 @@
 <?php
 /**
  * @package mod_gmaps
- * @author Rybalko Igor
- * @version 1.2.0
- * @copyright (C) 2019 https://greencomet.net
- * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
+ * @author Ihor Rybalko
+ * @version 2.0.0
+ * @copyright (C) 2026 https://webstep.top
+ * @license GNU/GPL: https://www.gnu.org/licenses/gpl-3.0.html
  *
 */
 
-defined('_JEXEC') or die;
+\defined('_JEXEC') or die;
 
 if(!$key){
 	echo $error_message;
 }
 ?>
 
-<div class="gmaps<?php echo $moduleclass_sfx;?>">
-	<div id="map<?php echo $correct; ?>" class="gmaps_h" style="height: <?php echo $height;?>px"></div>
-</div>
-
+<div id="<?php echo $mapId; ?>" class="gmaps<?php echo $moduleclass_sfx;?>" style="height: <?php echo $height;?>px"></div>

@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension
-    type="module"
-    version="3"
-    client="site">
+    type="module" client="site" method="upgrade">
     <name>GMaps module</name>
-    <author>Igor Rybalko</author>
+    <author>Ihor Rybalko</author>
     <creationDate>June 2019</creationDate>
     <license>GNU General Public License</license>
-    <authorEmail>igorrybalko2009@gmail.com</authorEmail>
-    <authorUrl>greencomet.net</authorUrl>
-    <version>1.2.2</version>
-    <description>Module Google Maps. Developed by https://greencomet.net</description>
-    
+    <authorEmail>igorryb@proton.me</authorEmail>
+    <authorUrl>webstep.top</authorUrl>
+    <version>2.0.0</version>
+    <description>Module Google Maps. Developed by https://webstep.top</description>
+    <namespace path="src">Webstep\Module\Gmaps</namespace>
     <files>
-        <filename module="mod_gmaps">mod_gmaps.php</filename>
+        <folder module="mod_gmaps">services</folder>
+        <folder>src</folder>
         <filename>mod_gmaps.xml</filename>
         <filename>index.html</filename>
-        <filename>helper.php</filename>
         <folder>tmpl</folder>
         <folder>language</folder>
-        <folder>img</folder>
+        <folder>media</folder>
     </files>
+    <media destination="mod_gmaps" folder="media">
+        <folder>js</folder>
+    </media>
     <config>
         <fields name="params">
             <fieldset name="basic">
                 <field
-                    name="breadth_cent"
-                    type="text" rows="3"
-                    label="MOD_GMAPS_BREADTHCENTER"
+                    name="lat_cent"
+                    type="number" rows="3"
+                    label="MOD_GMAPS_LATITUDECENTER"
                     description="MOD_GMAPS_NUMBERS" />
                 <field
-                    name="longitude_cent"
-                    type="text" rows="3"
+                    name="lng_cent"
+                    type="number" rows="3"
                     label="MOD_GMAPS_LONGCENTER"
                     description="MOD_GMAPS_NUMBERS" />
                 <field
                     name="zoom"
-                    type="text" rows="3"
+                    type="number" rows="3"
                     label="MOD_GMAPS_SCALE"
                     description="MOD_GMAPS_INTEGER" />
                 <field
                     name="height"
-                    type="text" rows="3"
+                    type="number" rows="3"
                     label="MOD_GMAPS_HEIGHT"
                     description="MOD_GMAPS_PIXELS" />
                 <field
@@ -49,18 +50,23 @@
                     type="text" rows="3"
                     label="API Key"
                     description="Google Maps JavaScript API" />
-                <field name="items"
-                       type="repeatable"
-                       label="MOD_GMAPS_DATA" >
-                    <fieldset hidden="true" name="item_modal" repeat="true">
+
+                <field
+                    type="subform"
+                    name="items"
+                    label="MOD_GMAPS_DATA"
+                    multiple="true"
+                    layout="joomla.form.field.subform.repeatable-table">
+                    
+                    <form>
                         <field
-                            name="breadth"
-                            type="text" rows="3"
-                            label="MOD_GMAPS_BREADTH"
+                            name="lat"
+                            type="number" rows="3"
+                            label="MOD_GMAPS_LATITUDE"
                             description="MOD_GMAPS_NUMBERS" />
                         <field
-                            name="longitude"
-                            type="text" rows="3"
+                            name="lng"
+                            type="number" rows="3"
                             label="MOD_GMAPS_LONGITUDE"
                             description="MOD_GMAPS_NUMBERS" />
                         <field
@@ -68,7 +74,7 @@
                             type="text" rows="3"
                             label="MOD_GMAPS_DESC"
                             description="MOD_GMAPS_DETAL" />
-                    </fieldset>
+                    </form>
                 </field>
 
             </fieldset>
@@ -76,18 +82,15 @@
 				<field
                     name="layout"
                     type="modulelayout"
+                    class="form-select"
                     label="JFIELD_ALT_LAYOUT_LABEL"
                     description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
                 <field
                     name="moduleclass_sfx"
-                    type="textarea" rows="3"
+                    type="text"
                     label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
                     description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
             </fieldset>
         </fields>
     </config>
-    <updateservers>
-        <server type="extension" priority="1" name="GMaps module">https://raw.githubusercontent.com/igorrybalko/mod_gmaps/master/update.xml</server>
-    </updateservers>
-    
 </extension>
