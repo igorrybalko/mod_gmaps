@@ -98,7 +98,7 @@ class Dispatcher implements DispatcherInterface
                 'lat' => (float) $latCent,
                 'lng' => (float) $lngCent,
             ],
-            'zoom' => $zoom,
+            'zoom' => (float) $zoom,
         ];
         ?>
 
