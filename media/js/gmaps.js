@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const map = new Map(document.getElementById(mapId), {
             center: {
-                lat: parseFloat(center.lat) ?? 0,
-                lng: parseFloat(center.lng) ?? 0,
+                lat: parseFloat(center.lat),
+                lng: parseFloat(center.lng),
             },
             zoom: parseFloat(zoom),
             mapId,
