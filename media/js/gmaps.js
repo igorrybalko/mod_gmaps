@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
         await google.maps.importLibrary('marker');
 
         const map = new Map(document.getElementById(mapId), {
-            center,
-            zoom,
+            center: {
+                lat: parseFloat(center.lat) ?? 0,
+                lng: parseFloat(center.lng) ?? 0,
+            },
+            zoom: parseFloat(zoom),
             mapId,
         });
 
@@ -13,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const marker = new google.maps.marker.AdvancedMarkerElement({
                 map,
                 position: {
-                    lat: el.lat,
-                    lng: el.lng,
+                    lat: parseFloat(el.lat),
+                    lng: parseFloat(el.lng),
                 },
             });
 

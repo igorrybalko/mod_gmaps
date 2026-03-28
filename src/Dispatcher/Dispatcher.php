@@ -95,10 +95,10 @@ class Dispatcher implements DispatcherInterface
             'points' => $fields,
             'mapId' => $mapId,
             'center' => [
-                'lat' => (float) $latCent,
-                'lng' => (float) $lngCent,
+                'lat' => $latCent ? $latCent : 0,
+                'lng' => $lngCent ? $lngCent : 0,
             ],
-            'zoom' => (float) $zoom,
+            'zoom' => $zoom,
         ];
         ?>
 

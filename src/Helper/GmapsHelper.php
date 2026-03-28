@@ -20,8 +20,8 @@ class GMapsHelper {
 	    foreach ($items as $item) {
 	      
 	            $converted[] = [
-					'lat' => (float)$item->lat,
-					'lng' => (float)$item->lng,
+					'lat' => $item->lat,
+					'lng' => $item->lng,
 					'desc' => $item->desc,
 				];
 	        
