@@ -40,7 +40,7 @@
                     name="zoom"
                     type="number" rows="3"
                     label="MOD_GMAPS_SCALE"
-                    description="MOD_GMAPS_INTEGER" />
+                    description="MOD_GMAPS_NUMBERS" />
                 <field
                     name="height"
                     type="number" rows="3"
