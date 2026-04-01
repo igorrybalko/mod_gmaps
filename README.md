@@ -1,4 +1,4 @@
-# mod_gmaps
+# mod_stepmap
 
 <p>The Google maps module for Joomla</p>
 For the module to work correctly, you must specify the Google Maps JavaScript API key.
@@ -6,7 +6,7 @@ For the module to work correctly, you must specify the Google Maps JavaScript AP
 Recommended version of Joomla is 6+
 
 #### Demo
-https://joomla.webstep.top/gmaps-demo
+https://joomla.webstep.top/stepmap-demo
 
 #### Documentation
 https://webstep.top/cms/joomla-google-maps-module/

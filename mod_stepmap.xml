@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension
     type="module" client="site" method="upgrade">
-    <name>GMaps module</name>
+    <name>StepMap module</name>
     <author>Ihor Rybalko</author>
     <creationDate>June 2019</creationDate>
     <license>GNU General Public License</license>
     <authorEmail>igorryb@proton.me</authorEmail>
     <authorUrl>webstep.top</authorUrl>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <description>Module Google Maps. Developed by https://webstep.top</description>
-    <namespace path="src">Webstep\Module\Gmaps</namespace>
+    <namespace path="src">Webstep\Module\Stepmap</namespace>
     <files>
-        <folder module="mod_gmaps">services</folder>
+        <folder module="mod_stepmap">services</folder>
         <folder>src</folder>
-        <filename>mod_gmaps.xml</filename>
+        <filename>mod_stepmap.xml</filename>
         <filename>index.html</filename>
         <folder>tmpl</folder>
         <folder>language</folder>
         <folder>media</folder>
     </files>
-    <media destination="mod_gmaps" folder="media">
+    <media destination="mod_stepmap" folder="media">
         <filename>joomla.asset.json</filename>
         <folder>js</folder>
     </media>
@@ -29,33 +29,33 @@
                 <field
                     name="lat_cent"
                     type="number" rows="3"
-                    label="MOD_GMAPS_LATITUDECENTER"
-                    description="MOD_GMAPS_NUMBERS" />
+                    label="MOD_STEPMAP_LATITUDECENTER"
+                    description="MOD_STEPMAP_NUMBERS" />
                 <field
                     name="lng_cent"
                     type="number" rows="3"
-                    label="MOD_GMAPS_LONGCENTER"
-                    description="MOD_GMAPS_NUMBERS" />
+                    label="MOD_STEPMAP_LONGCENTER"
+                    description="MOD_STEPMAP_NUMBERS" />
                 <field
                     name="zoom"
                     type="number" rows="3"
-                    label="MOD_GMAPS_SCALE"
-                    description="MOD_GMAPS_NUMBERS" />
+                    label="MOD_STEPMAP_SCALE"
+                    description="MOD_STEPMAP_NUMBERS" />
                 <field
                     name="height"
                     type="number" rows="3"
-                    label="MOD_GMAPS_HEIGHT"
-                    description="MOD_GMAPS_PIXELS" />
+                    label="MOD_STEPMAP_HEIGHT"
+                    description="MOD_STEPMAP_PIXELS" />
                 <field
                     name="key"
                     type="text" rows="3"
                     label="API Key"
-                    description="Google Maps JavaScript API" />
+                    description="Google Maps JavaScript API Key" />
 
                 <field
                     type="subform"
                     name="items"
-                    label="MOD_GMAPS_DATA"
+                    label="MOD_STEPMAP_DATA"
                     multiple="true"
                     layout="joomla.form.field.subform.repeatable-table">
                     
@@ -63,18 +63,18 @@
                         <field
                             name="lat"
                             type="number" rows="3"
-                            label="MOD_GMAPS_LATITUDE"
-                            description="MOD_GMAPS_NUMBERS" />
+                            label="MOD_STEPMAP_LATITUDE"
+                            description="MOD_STEPMAP_NUMBERS" />
                         <field
                             name="lng"
                             type="number" rows="3"
-                            label="MOD_GMAPS_LONGITUDE"
-                            description="MOD_GMAPS_NUMBERS" />
+                            label="MOD_STEPMAP_LONGITUDE"
+                            description="MOD_STEPMAP_NUMBERS" />
                         <field
                             name="desc"
                             type="text" rows="3"
-                            label="MOD_GMAPS_DESC"
-                            description="MOD_GMAPS_DETAL" />
+                            label="MOD_STEPMAP_DESC"
+                            description="MOD_STEPMAP_DETAL" />
                     </form>
                 </field>
 

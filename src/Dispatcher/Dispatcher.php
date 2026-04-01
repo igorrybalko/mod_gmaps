@@ -1,14 +1,14 @@
 <?php
 /**
- * @package mod_gmaps
+ * @package mod_stepmap
  * @author Ihor Rybalko
- * @version 2.0.0
+ * @version 2.0.1
  * @copyright (C) 2026 https://webstep.top
  * @license GNU/GPL: https://www.gnu.org/licenses/gpl-3.0.html
  *
 */
 
-namespace Webstep\Module\Gmaps\Site\Dispatcher;
+namespace Webstep\Module\Stepmap\Site\Dispatcher;
 
 \defined('_JEXEC') or die;
 
@@ -22,7 +22,7 @@ use Joomla\Registry\Registry;
 
 //use Joomla\CMS\Uri\Uri;
 
-use Webstep\Module\Gmaps\Site\Helper\GmapsHelper;
+use Webstep\Module\Stepmap\Site\Helper\StepmapHelper;
 
 class Dispatcher implements DispatcherInterface
 {
@@ -40,7 +40,7 @@ class Dispatcher implements DispatcherInterface
     {
 
         $language = Factory::getApplication()->getLanguage();
-        $language->load('mod_gmaps', JPATH_BASE . '/modules/mod_gmaps');
+        $language->load('mod_stepmap', JPATH_BASE . '/modules/mod_stepmap');
         $lang = $language->getTag();
 
         $params = new Registry($this->module->params);
@@ -59,12 +59,12 @@ class Dispatcher implements DispatcherInterface
         $wa->registerAndUseScript('googlemaps.api', $scriptSource, [], ['defer' => true], []);
 
         $wr = $wa->getRegistry();
-        $wr->addRegistryFile('media/mod_gmaps/joomla.asset.json');
-        $wa->useScript('mod_gmaps.gmaps');
+        $wr->addRegistryFile('media/mod_stepmap/joomla.asset.json');
+        $wa->useScript('mod_stepmap.stepmap');
 
         // $document = Factory::getDocument();
         // $document->addScript(
-        //     Uri::root(true) . '/modules/mod_gmaps/media/js/gmaps.js',
+        //     Uri::root(true) . '/modules/mod_stepmap/media/js/stepmap.js',
         //     ['defer' => true],
         //     ['relative' => false]
         // );
@@ -73,13 +73,13 @@ class Dispatcher implements DispatcherInterface
             $height = 300;
         }
 
-        $error_message = Text::_('MOD_GMAPS_ERROR') . ' <a target="_blank" href="https://console.cloud.google.com/">https://console.cloud.google.com/</a>';
+        $error_message = Text::_('MOD_STEPMAP_ERROR');
 
         if( !is_numeric($zoom) || intval($zoom) < 1 ){
             $zoom = 14;
         }
 
-        $fields = GmapsHelper::convert($info);
+        $fields = StepmapHelper::convert($info);
         $count = count($fields);
         $isNotSet = !is_numeric($latCent) || !is_numeric($lngCent);
         if ($count > 0 && ($count === 1 || $isNotSet)) {
@@ -107,7 +107,7 @@ class Dispatcher implements DispatcherInterface
         </script>
 <?php
 
-        require ModuleHelper::getLayoutPath('mod_gmaps');
+        require ModuleHelper::getLayoutPath('mod_stepmap');
     }
 }
 

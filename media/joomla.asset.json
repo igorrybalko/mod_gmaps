@@ -1,21 +1,21 @@
 {
     "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
-    "name": "mod_gmaps",
-    "version": "2.0.0",
+    "name": "mod_stepmap",
+    "version": "2.0.1",
     "description": "Module Google Maps",
     "license": "GPL-2.0-or-later",
     "assets": [
       {
-        "name": "mod_gmaps.gmaps",
+        "name": "mod_stepmap.stepmap",
         "type": "script",
-        "uri": "mod_gmaps/gmaps.js",
+        "uri": "mod_stepmap/stepmap.js",
         "attributes": {
           "defer": true
         },
         "dependencies": [
           "googlemaps.api"
         ],
-        "version": "2.0"
+        "version": "2.0.1"
       }
     ]
   }
