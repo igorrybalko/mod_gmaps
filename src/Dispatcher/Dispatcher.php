@@ -15,7 +15,6 @@ namespace Webstep\Module\Stepmap\Site\Dispatcher;
 use Joomla\CMS\Dispatcher\DispatcherInterface;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Language\Text;
 use Joomla\CMS\Application\CMSApplicationInterface;
 use Joomla\Input\Input;
 use Joomla\Registry\Registry;
@@ -72,8 +71,6 @@ class Dispatcher implements DispatcherInterface
         if(!$height){
             $height = 300;
         }
-
-        $error_message = Text::_('MOD_STEPMAP_ERROR');
 
         if( !is_numeric($zoom) || intval($zoom) < 1 ){
             $zoom = 14;
