@@ -1,7 +1,7 @@
 {
     "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
     "name": "mod_stepmap",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Module Google Maps",
     "license": "GPL-2.0-or-later",
     "assets": [
@@ -15,7 +15,7 @@
         "dependencies": [
           "googlemaps.api"
         ],
-        "version": "2.0.1"
+        "version": "2.0.2"
       }
     ]
   }
